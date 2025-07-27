@@ -884,7 +884,7 @@ textarea::placeholder {
 
 }
 
-.checkbox-field input:checked + .modal-agree-icon .agree-icon {
+.modal-check:checked + .modal-agree-icon .agree-icon {
     background-color: var(--ocean);
     border: none;
     fill: var(--cloud);
