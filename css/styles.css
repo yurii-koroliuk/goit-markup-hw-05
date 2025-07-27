@@ -654,17 +654,22 @@ margin-bottom: 8px;
 /* #endregion Footer */
 
 .backdrop {
-    /* display: flex;
-  align-items: center;
-  justify-content: center; */
+    position: fixed;
     background-color: rgba(46, 47, 66, 0.4);
     height: 100%;
     width: 100%;
-    position: fixed;
     top: 0;
     left: 0;
 
+    opacity: 0;
+    pointer-events: none;
+
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-open {
+    opacity: 1;
+    pointer-events: all;
 }
 
 .modal {
@@ -720,16 +725,6 @@ margin-bottom: 8px;
 .modal-button:hover,
 .modal-button:focus .modal-close {
     fill: #ffffff;
-}
-
-.modal-hidden {
-    /* opacity: 0; */
-    /* pointer-events: none; */
-}
-
-.is-open {
-    opacity: 1;
-    pointer-events: all;
 }
 
 .modal-title {
@@ -877,14 +872,14 @@ textarea::placeholder {
     fill: transparent;
 
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .agree-icon {
 
 }
 
-.modal-check:checked + .modal-agree-icon .agree-icon {
+.modal-check:checked + .modal-checkbox .modal-agree-icon {
     background-color: var(--ocean);
     border: none;
     fill: var(--cloud);
